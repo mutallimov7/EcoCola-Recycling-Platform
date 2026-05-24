@@ -1,0 +1,117 @@
+.lb-page { padding: 90px 0 60px; }
+
+.lb-header { text-align: center; margin-bottom: 36px; }
+.lb-header h1 { font-size: 2.5rem; margin-bottom: 8px; }
+.lb-header p { color: var(--text-secondary); }
+
+/* Tabs */
+.lb-tabs {
+  display: flex;
+  gap: 4px;
+  padding: 6px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+.lb-tab {
+  flex: 1;
+  min-width: 100px;
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 600;
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+}
+.lb-tab:hover { color: var(--text-primary); background: rgba(255,255,255,0.04); }
+.lb-tab.active {
+  background: rgba(244,0,9,0.1);
+  border-color: rgba(244,0,9,0.25);
+  color: var(--text-primary);
+}
+
+/* Cities Grid */
+.cities-grid { display: flex; flex-direction: column; gap: 12px; }
+.city-card {
+  display: flex; align-items: center; gap: 16px;
+  padding: 20px 24px;
+}
+.city-rank { font-size: 1.4rem; font-weight: 800; font-family: 'Outfit', sans-serif; min-width: 48px; }
+.city-info { flex: 1; }
+.city-name { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.1rem; }
+.city-meta { font-size: 13px; color: var(--text-muted); margin-top: 2px; }
+.city-bottles { text-align: right; }
+.city-bottles span { display: block; }
+.city-pts { font-size: 12px; color: var(--text-muted); }
+
+/* Podium */
+.podium {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 40px;
+  padding: 0 0 0;
+}
+.podium-item {
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  position: relative;
+}
+.podium-avatar {
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  color: white;
+  border: 3px solid rgba(255,255,255,0.2);
+  flex-shrink: 0;
+}
+.podium-item.is-me .podium-avatar { border-color: var(--coke-red); }
+.podium-name { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 14px; }
+.podium-pts { font-size: 13px; font-weight: 600; }
+.podium-medal { font-size: 28px; }
+.podium-base {
+  width: 100%;
+  border: 1px solid;
+  border-radius: var(--radius-sm);
+  min-width: 80px;
+}
+
+/* Rows */
+.lb-rows { display: flex; flex-direction: column; gap: 10px; }
+.lb-row {
+  display: flex; align-items: center; gap: 16px;
+  padding: 16px 20px;
+  transition: var(--transition);
+}
+.lb-row.is-me {
+  border-color: rgba(244,0,9,0.3);
+  background: rgba(244,0,9,0.05);
+}
+.lb-rank { font-family: 'Outfit', sans-serif; font-size: 1.1rem; font-weight: 800; min-width: 48px; }
+.lb-avatar {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 18px;
+  color: white;
+  flex-shrink: 0;
+}
+.lb-info { flex: 1; }
+.lb-name { font-weight: 600; font-size: 15px; display: flex; align-items: center; }
+.lb-meta { display: flex; align-items: center; gap: 8px; margin-top: 4px; }
+.lb-stats { text-align: right; }
+.lb-pts { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.1rem; }
+.lb-pts span { font-size: 12px; color: var(--text-muted); font-weight: 400; }
+.lb-bottles { font-size: 13px; color: var(--text-muted); margin-top: 2px; }
+
+.lb-loading { display: flex; justify-content: center; padding: 60px; }
+.lb-empty { text-align: center; color: var(--text-muted); padding: 60px; font-size: 16px; }
+
+@media (max-width: 600px) {
+  .podium { gap: 8px; }
+  .lb-row { padding: 12px; }
+}

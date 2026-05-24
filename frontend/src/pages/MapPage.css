@@ -1,0 +1,105 @@
+.map-page { padding: 90px 0 60px; }
+
+.map-header { text-align: center; margin-bottom: 36px; }
+.map-header h1 { font-size: 2.5rem; margin-bottom: 8px; }
+.map-header p { color: var(--text-secondary); }
+
+.map-layout { display: grid; grid-template-columns: 280px 1fr; gap: 20px; align-items: start; min-height: 600px; }
+
+.map-sidebar { display: flex; flex-direction: column; gap: 16px; }
+.sidebar-card { padding: 20px; }
+.sidebar-card h4 { font-size: 14px; font-family: 'Outfit', sans-serif; margin-bottom: 16px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; }
+
+/* Top Machines */
+.top-machines { display: flex; flex-direction: column; gap: 10px; }
+.top-machine {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px;
+  background: rgba(255,255,255,0.03);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition);
+  border: 1px solid transparent;
+}
+.top-machine:hover { background: rgba(255,255,255,0.06); }
+.top-machine.selected { border-color: rgba(244,0,9,0.3); background: rgba(244,0,9,0.05); }
+.top-rank { font-size: 20px; }
+.top-info { flex: 1; min-width: 0; }
+.top-name { font-size: 12px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.top-meta { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+
+/* City stats */
+.city-stats { display: flex; flex-direction: column; gap: 10px; }
+.city-stat-row { display: flex; align-items: center; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border-color); }
+.city-stat-row:last-child { border-bottom: none; }
+.city-stat-name { font-size: 14px; font-weight: 600; }
+.city-stat-count { font-size: 11px; color: var(--text-muted); }
+.city-bottles-count { font-size: 14px; font-weight: 600; color: var(--eco-green); }
+
+/* Legend */
+.legend-items { display: flex; flex-direction: column; gap: 12px; }
+.legend-item { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--text-secondary); }
+
+/* Map Container */
+.map-container {
+  height: 600px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+.map-loading { display: flex; align-items: center; justify-content: center; height: 100%; background: var(--bg-secondary); }
+
+/* Leaflet marker */
+:global(.map-marker) {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+  border: 2px solid;
+  background: var(--bg-secondary);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  transition: transform 0.2s;
+}
+.map-marker {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+  border: 2px solid;
+  background: #0E1520;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+}
+.map-marker.active { border-color: var(--eco-green); box-shadow: 0 0 12px rgba(0,200,81,0.4); }
+.map-marker.inactive { border-color: var(--text-muted); opacity: 0.7; }
+.map-marker.top { border-color: var(--gold); box-shadow: 0 0 16px rgba(255,215,0,0.4); }
+.map-marker.sm { width: 28px; height: 28px; font-size: 14px; }
+
+/* Popup */
+.map-popup { font-family: 'Inter', sans-serif; min-width: 180px; }
+.popup-name { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 14px; margin-bottom: 6px; color: #111; }
+.popup-city { font-size: 12px; color: #555; margin-bottom: 8px; }
+.popup-stats { display: flex; justify-content: space-between; font-size: 12px; }
+.popup-status.active { color: #00C851; font-weight: 600; }
+.popup-status.inactive { color: #888; }
+.popup-top { font-size: 12px; font-weight: 600; color: #B8860B; margin-top: 6px; }
+
+/* Selected machine */
+.selected-machine { display: flex; align-items: center; justify-content: space-between; padding: 20px 24px; margin-top: 20px; gap: 20px; flex-wrap: wrap; }
+.selected-info { flex: 1; }
+.selected-header { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
+.sel-icon { font-size: 32px; }
+.selected-header h3 { font-size: 1.1rem; margin-bottom: 4px; }
+.selected-header p { font-size: 13px; color: var(--text-secondary); }
+.selected-stats { display: flex; gap: 32px; }
+.sel-stat { display: flex; flex-direction: column; gap: 4px; }
+.sel-stat span { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.1rem; }
+.sel-stat span.green { color: var(--eco-green); }
+.sel-stat span.red { color: var(--coke-red); }
+.sel-stat label { font-size: 12px; color: var(--text-muted); }
+
+@media (max-width: 900px) {
+  .map-layout { grid-template-columns: 1fr; }
+  .map-container { height: 400px; }
+  .map-sidebar { order: 2; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .legend-card { grid-column: 1 / -1; }
+}
